@@ -28,8 +28,7 @@ class Calories extends Component {
   }
 
   dismissStart() {
-    const start = false
-    this.setState({ start })
+    document.querySelector(".startBox")?.setAttribute("style","margin-top:-800px; opacity: 0")
   }
 
   state = {
@@ -50,6 +49,8 @@ class Calories extends Component {
         <Header />
         <Container maxWidth="lg">
           {this.state.start}
+        </Container>
+        <Container maxWidth="md">
           {this.state.content}
         </Container>
       </div>
