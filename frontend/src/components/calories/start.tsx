@@ -11,7 +11,7 @@ const CaloriesStart = ({ handler }: CaloriesStartProps) => {
 
     return (
         <Container maxWidth="lg">
-            <Box className="landingPageBox">
+            <Box className="startBox">
                 <Typography color="primary" variant="h1">
                     <Box fontWeight="fontWeightBold" className="title">
                         How much calories have you consumed in your entire life?
