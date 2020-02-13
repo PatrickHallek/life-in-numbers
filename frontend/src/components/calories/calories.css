@@ -70,8 +70,8 @@
 
 .backgroundEllipseTop {
   position: absolute;
-  top: -100px;
-  left: 20px;
+  top: -200px;
+  left: -100px;
   z-index: -1;
   transform: rotate(25deg) scale(1.2);
   animation: ellipseTopSlide 1.2s ease;
@@ -84,8 +84,8 @@
   }
 
   to {
-    top: -100px;
-    left: 20px;
+    top: -200px;
+    left: -100px;
   }
 }
 
