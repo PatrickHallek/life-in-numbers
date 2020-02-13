@@ -11,7 +11,10 @@ const useStyles = makeStyles((theme: Theme) =>
       flexGrow: 1
     },
     bar: {
-      backgroundColor: "white"
+      backgroundColor: "white",
+      position: "absolute",
+      top: 0,
+      left: 0
     },
     menuButton: {
       marginRight: theme.spacing(2)
@@ -30,7 +33,7 @@ const Header = () => {
 
   return (
     <div className={classes.root}>
-      <AppBar className={classes.bar} position="static">
+      <AppBar className={classes.bar}>
         <Toolbar>
           <Box ml={5}>
             <Typography color="primary" className={classes.logo} variant="h4">
