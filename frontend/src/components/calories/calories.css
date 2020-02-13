@@ -1,6 +1,7 @@
 .root {
   position: relative;
   width: 100vw;
+  height: 100vh;
   overflow: hidden
 }
 
@@ -13,16 +14,18 @@
   from {
     margin-left: -300px
   }
+
   to {
     margin-left: 0px
   }
 }
 
-.landingPageBox {
-  height: calc(100vh - 64px);
+.startBox {
+  height: 100vh;
   display: flex;
   flex-wrap: wrap;
-  align-content: center
+  align-content: center;
+  transition: all 0.6s ease;
 }
 
 
@@ -62,6 +65,7 @@
     right: -500px;
     bottom: -300px
   }
+
   to {
     right: -80px;
     bottom: 0px
