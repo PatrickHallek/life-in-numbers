@@ -4,17 +4,18 @@ import "./index.css"
 
 
 type StartProps = {
+    title: string,
     handler: any
 }
 
-const Start = ({ handler }: StartProps) => {
+const Start = ({ handler, title }: StartProps) => {
 
     return (
         <Container maxWidth="lg">
             <Box className="startBox">
                 <Typography color="primary" variant="h1">
                     <Box fontWeight="fontWeightBold" className="title">
-                        How much calories have you consumed in your entire life?
+                        {title}
                     </Box>
                 </Typography>
                 <Box mt={6} mb={18} className="buttonBox">
