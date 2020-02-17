@@ -1,13 +1,13 @@
 import React from "react";
 import { Button, Typography, Box, Card, CardContent } from "@material-ui/core";
-import "./layouts.css"
+import "./index.css"
 
-type AppCardProps = {
+type QuestionProps = {
   title: string,
   handler: any
 }
 
-const AppCard = ({ title, handler }: AppCardProps) => {
+const Question = ({ title, handler }: QuestionProps) => {
 
   return (
     <Box mt={3}>
@@ -28,4 +28,4 @@ const AppCard = ({ title, handler }: AppCardProps) => {
   );
 }
 
-export default AppCard;
+export default Question;

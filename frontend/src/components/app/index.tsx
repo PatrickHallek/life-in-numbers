@@ -1,16 +1,16 @@
 import React, { Component } from "react";
-import AppCard from "../layouts/appCard";
+import Question from "./question";
 import Header from "../layouts/header";
 import { Container } from "@material-ui/core";
-import "./calories.css"
-import CaloriesStart from "./start";
+import Start from "./start";
+import "./index.css"
 
-class Calories extends Component {
+class Index extends Component {
 
   startQuestionnaire = async () => {
     this.dismissStart()
     const { questionnaireState } = this.state
-    const content = <AppCard key={questionnaireState[0].id} handler={this.showNextQuestion} title={questionnaireState[0].title} />
+    const content = <Question key={questionnaireState[0].id} handler={this.showNextQuestion} title={questionnaireState[0].title} />
     this.setState({ content })
   }
 
@@ -20,7 +20,7 @@ class Calories extends Component {
     if (newQuestion) {
       questionnaireState.push(newQuestion)
       const content = await new Promise(resolve => {
-        resolve(questionnaireState.map(question => <AppCard key={question.id} handler={this.showNextQuestion} title={question.title} />))
+        resolve(questionnaireState.map(question => <Question key={question.id} handler={this.showNextQuestion} title={question.title} />))
       })
       this.setState({ content })
     }
@@ -33,7 +33,7 @@ class Calories extends Component {
 
   state = {
     content: false,
-    start: <CaloriesStart handler={this.startQuestionnaire} />,
+    start: <Start handler={this.startQuestionnaire} />,
     questionnaireState: [{ id: 1, title: "How old are you?", input: 1 }],
     questionnaire: [
       { id: 1, title: "How old are you?", input: 1 },
@@ -59,4 +59,4 @@ class Calories extends Component {
 
 };
 
-export default Calories;
+export default Index;

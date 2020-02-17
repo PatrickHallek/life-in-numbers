@@ -1,13 +1,13 @@
 import React from "react";
 import { Container, Box, Typography, Button } from "@material-ui/core";
-import "./calories.css"
+import "./index.css"
 
 
-type CaloriesStartProps = {
+type StartProps = {
     handler: any
 }
 
-const CaloriesStart = ({ handler }: CaloriesStartProps) => {
+const Start = ({ handler }: StartProps) => {
 
     return (
         <Container maxWidth="lg">
@@ -43,4 +43,4 @@ const CaloriesStart = ({ handler }: CaloriesStartProps) => {
 
 };
 
-export default CaloriesStart;
+export default Start;
