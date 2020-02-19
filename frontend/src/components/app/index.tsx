@@ -1,65 +1,73 @@
-import React, { Component } from "react";
-import { Container } from "@material-ui/core";
-// import { ThemeProvider } from "@material-ui/core/styles";
+import React, { Component, useReducer, Dispatch } from "react";
+import { Container, Button } from "@material-ui/core";
+import { ThemeProvider } from "@material-ui/core/styles";
 import { createMuiTheme } from '@material-ui/core/styles';
-
 import Question from "./question";
-import Header from "../layouts/header";
-import GetContent from "../../services/content";
-import { ContentI } from "../../services/content";
+import GetContent, { IContent, IContentQuestionnaire } from "../../services/content";
 import Start from "./start";
-
+import { useParams } from "react-router-dom";
 import "./index.css"
 
-class Index extends Component {
+interface IParamTypes {
+  topic: string
+}
 
-  subscription: any;
+const Index = () => {
 
-  startQuestionnaire = async () => {
-    this.dismissStart()
-    const { questionnaire } = this.state.content
-    const questions = <Question key={questionnaire[0].id} handler={this.showNextQuestion} title={questionnaire[0].title} />
-    this.setState({ questions })
-  }
-
-  showNextQuestion = async () => {
-    const { questions } = this.state
-    const newQuestion = this.state.content.questionnaire[questions.length]
-    if (newQuestion) {
-      questions.push(newQuestion)
-      const content = await new Promise(resolve => {
-        resolve(questions.map((question: any) => <Question key={question.id} handler={this.showNextQuestion} title={question.title} />))
-      })
-      this.setState({ content })
+  const { topic } = useParams<IParamTypes>();
+  const content: IContent = GetContent(topic)
+  const [questions, addQuestion] = useReducer(
+    (questions: Array<IContentQuestionnaire>,
+      { id, title, inputComponent }: IContentQuestionnaire) => {
+      return [...questions, { id, title, inputComponent }]
+    }, []);
+  const { title } = content;
+  const { colorTheme } = content
+  const theme = createMuiTheme({
+    palette: {
+      primary: {
+        main: colorTheme.primary
+      },
+      secondary: {
+        main: colorTheme.secondary
+      },
+      error: {
+        main: "#ff0000"
+      },
+      background: {
+        default: colorTheme.background
+      }
     }
+  });
+
+  const startQuestionnaire = async () => {
+    dismissStart()
+    showNextQuestion()
   }
 
-  dismissStart() {
-    document.querySelector(".startBox")?.setAttribute("style", "margin-top:-800px; opacity: 0")
+  const showNextQuestion = async () => {
+    const { questionnaire } = content
+    const newQuestion = questionnaire[questions.length]
+    if (newQuestion) { addQuestion(newQuestion) }
   }
 
-  state: any = {
-    content: GetContent("Calories"),
-    questions: [],
-    start: < Start handler={this.startQuestionnaire} title="Test test test" />
+  const dismissStart = () => {
+    document.querySelector(".startBox")?.setAttribute("style", "display: none; opacity: 0")
   }
 
-  render() {
-    const { start } = this.state;
-    const { questions } = this.state;
-    return (
+  return (
+    <ThemeProvider theme={theme}>
       <div className="root">
-        <Header />
         <Container maxWidth="lg">
-          {start}
+          <h1>1</h1>
+          < Start handler={startQuestionnaire} title={title} />
         </Container>
         <Container maxWidth="md">
-          {questions}
+          {questions.map(question => <Question key={question.id} handler={showNextQuestion} title={question.title} />)}
         </Container>
       </div>
-    );
-  }
-
+    </ThemeProvider>
+  );
 };
 
 export default Index;
