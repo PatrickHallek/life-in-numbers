@@ -1,5 +1,5 @@
-import React, { Component, useReducer, Dispatch } from "react";
-import { Container, Button } from "@material-ui/core";
+import React, { useReducer } from "react";
+import { Container } from "@material-ui/core";
 import { ThemeProvider } from "@material-ui/core/styles";
 import { createMuiTheme } from '@material-ui/core/styles';
 import Question from "./question";

@@ -4,9 +4,7 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import { Box } from "@material-ui/core";
-import { BrowserRouter as Router, Link } from "react-router-dom";
-import Index from "../app";
-import Result from "../app";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
