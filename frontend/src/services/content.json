@@ -1,13 +1,13 @@
 [{
     "id": 1,
-    "topic": "Calories",
+    "topic": "calories",
     "title": "Test Title, Please Edit This Page",
     "colorTheme": {
         "primary": "#257C62",
         "secondary": "#A5FFD4",
         "background": "#CCFFE7"
     },
-    "result_text": "this is the result",
+    "resultText": "this is the result",
     "formula": "1+2+3",
     "questionnaire": [{
             "id": 1,
