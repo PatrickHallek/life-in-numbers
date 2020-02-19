@@ -1,15 +1,31 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import CssBaseline from "@material-ui/core/CssBaseline";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { ThemeProvider } from "@material-ui/core/styles";
-import App from './App';
+import CssBaseline from "@material-ui/core/CssBaseline";
 import theme from './theme';
+import Index from './components/app';
+import Header from './components/layouts/header';
+import Result from './components/app/result';
 
 ReactDOM.render(
   <ThemeProvider theme={theme}>
-    {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
     <CssBaseline />
-    <App />
+    <Router>
+      <Header />
+      <Switch>
+        <Route exact path="/:topic" component={Index} />
+        <Route path="/">
+          <h1>hello</h1>
+          <h1>hello</h1>
+          <h1>hello</h1>
+          <h1>hello</h1>
+          <h1>hello</h1>
+        </Route>
+      </Switch>
+    </Router>
+
+
   </ThemeProvider>,
   document.querySelector('#root'),
 );

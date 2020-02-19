@@ -4,6 +4,9 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import { Box } from "@material-ui/core";
+import { BrowserRouter as Router, Link } from "react-router-dom";
+import Index from "../app";
+import Result from "../app";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -32,13 +35,14 @@ const Header = () => {
   const classes = useStyles();
 
   return (
+
     <div className={classes.root}>
       <AppBar className={classes.bar}>
         <Toolbar>
           <Box ml={5}>
             <Typography color="primary" className={classes.logo} variant="h4">
               LN
-            </Typography>
+          </Typography>
           </Box>
           <Box ml={1}>
             <Typography
@@ -47,8 +51,12 @@ const Header = () => {
               variant="h4"
             >
               Life In <br /> Numbers
-            </Typography>
+          </Typography>
           </Box>
+
+          <Link to={`/calories`}>Calories</Link>
+          <Link to={`/`}>Air</Link>
+
         </Toolbar>
       </AppBar>
     </div>
