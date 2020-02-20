@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     bar: {
       backgroundColor: "white",
-      position: "absolute",
+      position: "fixed",
       top: 0,
       left: 0
     },
@@ -25,6 +25,11 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     logoText: {
       fontSize: "16px"
+    },
+    link: {
+      marginRight: "10px",
+      color: theme.palette.primary.main,
+      textDecoration: "none"
     }
   })
 );
@@ -42,7 +47,8 @@ const Header = () => {
               LN
           </Typography>
           </Box>
-          <Box ml={1}>
+
+          <Box flexGrow="1" ml={1}>
             <Typography
               color="primary"
               className={classes.logoText}
@@ -52,9 +58,10 @@ const Header = () => {
           </Typography>
           </Box>
 
-          <Link to={`/calories`}>Calories</Link>
-          <Link to={`/`}>Air</Link>
-
+          <Box mr={5}>
+            <Link className={classes.link} to={`/calories`}>Calories</Link>
+            <Link className={classes.link} to={`/`}>Air</Link>
+          </Box>
         </Toolbar>
       </AppBar>
     </div>
