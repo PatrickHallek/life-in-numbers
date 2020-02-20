@@ -1,7 +1,6 @@
 import JSONContent from './content.json'
 
 export interface IContent {
-    id: number,
     topic: string,
     title: string,
     colorTheme: {
@@ -15,9 +14,8 @@ export interface IContent {
 }
 
 export interface IContentQuestionnaire {
-    id: number,
     title: string,
-    inputComponent: any
+    inputComponentTag: string
 }
 
 const GetContent = (topic: string) => {
@@ -27,7 +25,6 @@ const GetContent = (topic: string) => {
 }
 
 const initialContent = {
-    "id": 1,
     "topic": "calories",
     "title": "Test Title, Please Edit This Page",
     "colorTheme": {
@@ -38,24 +35,20 @@ const initialContent = {
     "resultText": "this is the result",
     "formula": "1+2+3",
     "questionnaire": [{
-        "id": 1,
         "title": "How old are you?",
-        "inputComponent": 1
+        "inputComponentTag": "sex"
     },
     {
-        "id": 2,
         "title": "How tall are you?",
-        "inputComponent": 1
+        "inputComponentTag": "sex"
     },
     {
-        "id": 3,
         "title": "How much do you weigt?",
-        "inputComponent": 1
+        "inputComponentTag": "sex"
     },
     {
-        "id": 4,
         "title": "Wich sex do you have?",
-        "inputComponent": 1
+        "inputComponentTag": "sex"
     }
     ]
 }

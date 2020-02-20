@@ -18,8 +18,8 @@ const Index = () => {
   const content: IContent = GetContent(topic)
   const [questions, addQuestion] = useReducer(
     (questions: Array<IContentQuestionnaire>,
-      { id, title, inputComponent }: IContentQuestionnaire) => {
-      return [...questions, { id, title, inputComponent }]
+      { title, inputComponentTag }: IContentQuestionnaire) => {
+      return [...questions, { title, inputComponentTag }]
     }, []);
   const { title } = content;
   const { colorTheme } = content
@@ -58,12 +58,11 @@ const Index = () => {
   return (
     <ThemeProvider theme={theme}>
       <div className="root">
-        <Container maxWidth="lg">
-          <h1>1</h1>
+        <Container maxWidth="lg" className="container">
           < Start handler={startQuestionnaire} title={title} />
         </Container>
-        <Container maxWidth="md">
-          {questions.map(question => <Question key={question.id} handler={showNextQuestion} title={question.title} />)}
+        <Container maxWidth="md" className="container">
+          {questions.map((question, index) => <Question key={index} handler={showNextQuestion} inputComponentTag={question.inputComponentTag} title={question.title} />)}
         </Container>
       </div>
     </ThemeProvider>

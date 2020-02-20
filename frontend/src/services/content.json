@@ -1,5 +1,4 @@
 [{
-    "id": 1,
     "topic": "calories",
     "title": "Test Title, Please Edit This Page",
     "colorTheme": {
@@ -10,24 +9,20 @@
     "resultText": "this is the result",
     "formula": "1+2+3",
     "questionnaire": [{
-            "id": 1,
             "title": "How old are you?",
-            "inputComponent": 1
+            "inputComponentTag": "age"
         },
         {
-            "id": 2,
-            "title": "How tall are you?",
-            "inputComponent": 1
-        },
-        {
-            "id": 3,
             "title": "How much do you weigt?",
-            "inputComponent": 1
+            "inputComponentTag": "weight"
         },
         {
-            "id": 4,
+            "title": "How tall are you?",
+            "inputComponentTag": "height"
+        },
+        {
             "title": "Wich sex do you have?",
-            "inputComponent": 1
+            "inputComponentTag": "sex"
         }
     ]
 }]
