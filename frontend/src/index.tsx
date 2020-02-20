@@ -6,6 +6,7 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import theme from './theme';
 import Index from './components/app';
 import Header from './components/layouts/header';
+import "./index.css"
 
 ReactDOM.render(
   <ThemeProvider theme={theme}>
