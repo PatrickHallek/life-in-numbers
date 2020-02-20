@@ -1,13 +1,17 @@
 import React from "react";
 import { Button, Typography, Box, Card, CardContent } from "@material-ui/core";
 import "./index.css"
+import InputComponentMapping from "../inputs";
 
 type QuestionProps = {
   title: string,
-  handler: any
+  handler: any,
+  inputComponentTag: any
 }
 
-const Question = ({ title, handler }: QuestionProps) => {
+const Question = ({ title, handler, inputComponentTag }: QuestionProps) => {
+
+  const inputComponent = InputComponentMapping(inputComponentTag)
 
   return (
     <Box mt={3}>
@@ -19,6 +23,7 @@ const Question = ({ title, handler }: QuestionProps) => {
           <Typography variant="h4" component="h3">
             {title}
           </Typography>
+          {inputComponent}
           <Button onClick={handler} variant="contained" color="primary" className="button">
             Submit
           </Button>
