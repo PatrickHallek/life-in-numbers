@@ -1,7 +1,8 @@
-import React, { useReducer } from "react";
+import React, { useReducer, useState } from "react";
 import { Container } from "@material-ui/core";
 import { ThemeProvider } from "@material-ui/core/styles";
 import { createMuiTheme } from '@material-ui/core/styles';
+import { Button } from "@material-ui/core";
 import Question from "./question";
 import GetContent, { IContent, IContentQuestionnaire } from "../../services/content";
 import Start from "./start";
@@ -21,6 +22,7 @@ const Index = () => {
       { title, inputComponentTag }: IContentQuestionnaire) => {
       return [...questions, { title, inputComponentTag }]
     }, []);
+  const [resultCalculationButton, setResultCalculationButton] = useState()
   const { title } = content;
   const { colorTheme } = content
   const theme = createMuiTheme({
@@ -55,6 +57,13 @@ const Index = () => {
     document.querySelector(".startBox")?.setAttribute("style", "display: none; opacity: 0")
   }
 
+  // const resultCalculationButton = () => {
+  //   console.log(resultCalculationButton)
+  //   if(questions.length === content.questionnaire.length) {
+  //     return <Button>Calculate Result</Button>
+  //   } else return
+  // }
+
   return (
     <ThemeProvider theme={theme}>
       <div className="root">
@@ -63,6 +72,7 @@ const Index = () => {
         </Container>
         <Container maxWidth="md" className="container">
           {questions.map((question, index) => <Question key={index} handler={showNextQuestion} inputComponentTag={question.inputComponentTag} title={question.title} />)}
+          {resultCalculationButton}
         </Container>
       </div>
     </ThemeProvider>
