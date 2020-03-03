@@ -1,8 +1,8 @@
 import React from "react";
-import Sex from "./sex"
-import Age from "./age"
-import Height from "./height";
-import Weight from "./weight";
+import Sex from "./inputElements/sex"
+import Age from "./inputElements/age"
+import Height from "./inputElements/height";
+import Weight from "./inputElements/weight";
 
 interface IInputComponentLibrary {
     sex: any;

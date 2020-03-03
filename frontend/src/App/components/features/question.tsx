@@ -1,7 +1,6 @@
 import React from "react";
 import { Button, Typography, Box, Card, CardContent } from "@material-ui/core";
-import "./index.css"
-import InputComponentMapping from "../inputs";
+import InputComponentMapping from "../shared/inputs/input";
 
 type QuestionProps = {
   title: string,

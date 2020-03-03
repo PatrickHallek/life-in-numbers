@@ -1,6 +1,5 @@
 import React from "react";
 import { Container, Box, Typography, Button } from "@material-ui/core";
-import "./index.css"
 
 
 type StartProps = {

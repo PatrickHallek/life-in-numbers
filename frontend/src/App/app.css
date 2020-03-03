@@ -1,3 +1,12 @@
+html {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar {
+  width: 0px;
+}
+
 .root {
   position: relative;
   width: 100vw;

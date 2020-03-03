@@ -1,8 +1,7 @@
 import React from "react";
 import { Slider, Box } from '@material-ui/core';
-import "./inputs.css"
 
-const Height = () => {
+const Age = () => {
 
     function valuetext(value: number) {
         return `${value}`;
@@ -10,33 +9,37 @@ const Height = () => {
 
     const marks = [
         {
-            value: 120,
-            label: '1,2m',
+            value: 0,
+            label: '0',
         },
         {
-            value: 180,
-            label: '1,8m',
+            value: 30,
+            label: '30',
         },
         {
-            value: 240,
-            label: '2,4m',
+            value: 60,
+            label: '60',
+        },
+        {
+            value: 99,
+            label: '99',
         },
     ];
 
     return (
         <Box m={2}>
             <Slider
-                defaultValue={170}
+                defaultValue={30}
                 getAriaValueText={valuetext}
                 aria-labelledby="discrete-slider"
                 valueLabelDisplay="auto"
                 step={1}
                 marks={marks}
-                min={120}
-                max={250}
+                min={0}
+                max={99}
             />
         </Box>
     )
 }
 
-export default Height;
+export default Age;

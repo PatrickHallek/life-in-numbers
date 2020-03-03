@@ -1,6 +1,5 @@
 import React from "react";
 import { Container } from "@material-ui/core";
-import "./index.css"
 
 const Result = () => {
 
