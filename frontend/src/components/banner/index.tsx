@@ -1,14 +1,13 @@
 import React from "react";
 import { Container, Box, Typography, Button } from "@material-ui/core";
-import "./index.css"
 
 
-type StartProps = {
+type BannerProps = {
     title: string,
     handler: any
 }
 
-const Start = ({ handler, title }: StartProps) => {
+const Banner = ({ handler, title }: BannerProps) => {
 
     return (
         <Container maxWidth="lg">
@@ -44,4 +43,4 @@ const Start = ({ handler, title }: StartProps) => {
 
 };
 
-export default Start;
+export default Banner;

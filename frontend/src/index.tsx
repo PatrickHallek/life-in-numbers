@@ -4,8 +4,8 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { ThemeProvider } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import theme from './theme';
-import Index from './components/app';
-import Header from './components/layouts/header';
+import Index from './pages/topic';
+import Header from './layouts/header';
 import "./index.css"
 
 ReactDOM.render(

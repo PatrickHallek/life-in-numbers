@@ -9,7 +9,7 @@ export interface IContent {
         background: string
     },
     resultText: string,
-    formula: string,
+    formula: Array<any>,
     questionnaire: Array<IContentQuestionnaire>
 }
 
@@ -33,7 +33,7 @@ const initialContent = {
         "background": "#CCFFE7"
     },
     "resultText": "this is the result",
-    "formula": "1+2+3",
+    "formula": ["1+2+3"],
     "questionnaire": [{
         "title": "How old are you?",
         "inputComponentTag": "sex"

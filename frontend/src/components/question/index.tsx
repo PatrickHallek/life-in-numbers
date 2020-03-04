@@ -1,6 +1,5 @@
 import React from "react";
 import { Button, Typography, Box, Card, CardContent } from "@material-ui/core";
-import "./index.css"
 import InputComponentMapping from "../inputs";
 
 type QuestionProps = {
@@ -14,7 +13,7 @@ const Question = ({ title, handler, inputComponentTag }: QuestionProps) => {
   const inputComponent = InputComponentMapping(inputComponentTag)
 
   return (
-    <Box mt={3}>
+    <Box mt={3} className="question">
       <Card className="appCard">
         <CardContent>
           <Typography variant="h3" component="h2">
