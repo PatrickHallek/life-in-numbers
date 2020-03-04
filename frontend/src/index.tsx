@@ -6,25 +6,21 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import theme from './theme';
 import Header from './App/components/layouts/header';
 import App from './App/app';
+import { Provider } from 'react-redux';
+import store from './App/redux/store';
+
 
 ReactDOM.render(
-  <ThemeProvider theme={theme}>
-    <CssBaseline />
-    <Router>
-      <Header />
-      <Switch>
-        <Route exact path="/:topic" component={App} />
-        <Route path="/">
-          <h1>hello</h1>
-          <h1>hello</h1>
-          <h1>hello</h1>
-          <h1>hello</h1>
-          <h1>hello</h1>
-        </Route>
-      </Switch>
-    </Router>
-
-
-  </ThemeProvider>,
+  <Provider store={store}>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Router>
+        <Header />
+        <Switch>
+          <Route exact path="/:topic" component={App} />
+        </Switch>
+      </Router>
+    </ThemeProvider>
+  </Provider>,
   document.querySelector('#root'),
 );
