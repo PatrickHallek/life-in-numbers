@@ -60,7 +60,7 @@ const Header = () => {
 
           <Box mr={5}>
             <Link className={classes.link} to={`/calories`}>Calories</Link>
-            <Link className={classes.link} to={`/`}>Air</Link>
+            <Link className={classes.link} to={`/smoking`}>Smoking</Link>
           </Box>
         </Toolbar>
       </AppBar>

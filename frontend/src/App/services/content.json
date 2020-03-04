@@ -7,7 +7,7 @@
         "background": "#CCFFE7"
     },
     "resultText": "this is the result",
-    "formula": "1+2+3",
+    "formula": [1, 2, 2],
     "questionnaire": [{
             "title": "How old are you?",
             "inputComponentTag": "age"
@@ -24,5 +24,34 @@
             "title": "Wich sex do you have?",
             "inputComponentTag": "sex"
         }
-    ]
+    ],
+    "answers": []
+}, {
+    "topic": "smoking",
+    "title": "How much did you smoke in your entire life?",
+    "colorTheme": {
+        "primary": "#257C62",
+        "secondary": "#A5FFD4",
+        "background": "#CCFFE7"
+    },
+    "resultText": "this is the result",
+    "formula": [1, 2, 2],
+    "questionnaire": [{
+            "title": "How old are you?",
+            "inputComponentTag": "age"
+        },
+        {
+            "title": "How much do you weigt?",
+            "inputComponentTag": "weight"
+        },
+        {
+            "title": "How tall are you?",
+            "inputComponentTag": "height"
+        },
+        {
+            "title": "Wich sex do you have?",
+            "inputComponentTag": "sex"
+        }
+    ],
+    "answers": []
 }]
