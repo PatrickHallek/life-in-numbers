@@ -10,12 +10,9 @@ const contentReducer = (contentState: IContent = initialState, action: any): ICo
         case types.CHANGE_CONTENT:
             return { ...action.content }
 
-        case types.ADD_ANSWER:
-            return { ...contentState, answers: [...contentState?.answers, action.answer] }
-
         case types.UPDATE_ANSWER:
             // Check if answer was answered before
-            const isAnswer = contentState.answers?.find(answer => answer.inputComponentTag == action.answer.inputComponentTag)
+            const isAnswer = contentState.answers?.find(answer => answer.inputComponentTag === action.answer.inputComponentTag)
             if (isAnswer === undefined) return { ...contentState, answers: [...contentState?.answers, { ...action.answer }] } // Add answer
             else return { // Update answer
                 ...contentState, answers: contentState.answers?.map(answer => {

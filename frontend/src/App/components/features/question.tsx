@@ -1,9 +1,6 @@
 import React from "react";
-import { Button, Typography, Box, Card, CardContent } from "@material-ui/core";
+import { Typography, Box, Card, CardContent } from "@material-ui/core";
 import InputComponentMapping from "../shared/inputs/input";
-import { useDispatch } from "react-redux";
-import { IAnswer } from "../../models/contentInterface";
-import { addAnswer } from "../../redux/reducer/actions";
 
 type QuestionProps = {
   title: string,

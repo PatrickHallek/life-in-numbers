@@ -1,26 +1,22 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Container } from "@material-ui/core";
 import { ThemeProvider } from "@material-ui/core/styles";
 import { createMuiTheme } from '@material-ui/core/styles';
-import getContent from "./services/contentService";
-import { useParams } from "react-router-dom";
 import Question from "./components/features/question";
 import Start from "./components/features/start";
 import { IContent, IAnswer } from "./models/contentInterface";
-import { addAnswer } from "./redux/reducer/actions";
+import { updateAnswer } from "./redux/reducer/actions";
 import { useSelector, useDispatch, shallowEqual } from "react-redux";
 
 import "./app.css"
 
 const App = () => {
   const dispatch = useDispatch();
-  const { topic } = useParams<{ topic: string }>()
-  const initialComponentContent = getContent(topic)
-  //   dispatch(changeContent(initialComponentContent))
+  // const { topic } = useParams<{ topic: string }>()
+  // const initialComponentContent = getContent(topic)
+  // dispatch(changeContent(initialComponentContent))
 
   const content: IContent = useSelector((state: any) => state.content, shallowEqual)
-  console.log(content)
-
 
   const theme = createMuiTheme({
     palette: {
@@ -40,7 +36,7 @@ const App = () => {
   });
 
   const answerDispatcher = ({ inputComponentTag, value }: IAnswer) => {
-    dispatch(addAnswer({ inputComponentTag, value }));
+    dispatch(updateAnswer({ inputComponentTag, value }));
   }
 
   const renderStart = () => {
@@ -55,10 +51,10 @@ const App = () => {
 
   const renderQuestions = () => {
     return content.questionnaire.map((question, index) => {
-      if (index < content.answers.length)
-        return (
-          <Question key={index} inputComponentTag={question.inputComponentTag} title={question.title} />
-        )
+      if (index < content.answers.length) return (
+        <Question key={index} inputComponentTag={question.inputComponentTag} title={question.title} />
+      ) 
+      else return <div key={index}></div>
     })
   }
 

@@ -1,7 +1,7 @@
 import React from "react";
 import { Slider, Box } from '@material-ui/core';
 import { useDispatch } from "react-redux";
-import { addAnswer, updateAnswer } from "../../../../redux/reducer/actions";
+import { updateAnswer } from "../../../../redux/reducer/actions";
 
 const Age = () => {
     const dispatch = useDispatch();
