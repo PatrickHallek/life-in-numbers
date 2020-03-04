@@ -1,71 +1,74 @@
-import React, { useReducer, useState } from "react";
+import React, { useEffect } from "react";
 import { Container } from "@material-ui/core";
 import { ThemeProvider } from "@material-ui/core/styles";
 import { createMuiTheme } from '@material-ui/core/styles';
-import GetContent, { IContent, IContentQuestionnaire } from "./services/content";
+import getContent from "./services/contentService";
 import { useParams } from "react-router-dom";
-import "./app.css"
 import Question from "./components/features/question";
 import Start from "./components/features/start";
+import { IContent, IAnswer } from "./models/contentInterface";
+import { addAnswer } from "./redux/reducer/actions";
+import { useSelector, useDispatch, shallowEqual } from "react-redux";
 
-interface IParamTypes {
-  topic: string
-}
+import "./app.css"
 
 const App = () => {
+  const dispatch = useDispatch();
+  const { topic } = useParams<{ topic: string }>()
+  const initialComponentContent = getContent(topic)
+  //   dispatch(changeContent(initialComponentContent))
 
-  const { topic } = useParams<IParamTypes>();
-  const content: IContent = GetContent(topic)
-  const [questions, addQuestion] = useReducer(
-    (questions: Array<IContentQuestionnaire>,
-      { title, inputComponentTag }: IContentQuestionnaire) => {
-      return [...questions, { title, inputComponentTag }]
-    }, []);
-  const [resultCalculationButton, setResultCalculationButton] = useState()
-  const { title } = content;
-  const { colorTheme } = content
+  const content: IContent = useSelector((state: any) => state.content, shallowEqual)
+  console.log(content)
+
+
   const theme = createMuiTheme({
     palette: {
       primary: {
-        main: colorTheme.primary
+        main: content.colorTheme.primary
       },
       secondary: {
-        main: colorTheme.secondary
+        main: content.colorTheme.secondary
       },
       error: {
         main: "#ff0000"
       },
       background: {
-        default: colorTheme.background
+        default: content.colorTheme.background
       }
     }
   });
 
-  const startQuestionnaire = async () => {
-    dismissStart()
-    showNextQuestion()
+  const answerDispatcher = ({ inputComponentTag, value }: IAnswer) => {
+    dispatch(addAnswer({ inputComponentTag, value }));
   }
 
-  const showNextQuestion = async () => {
-    const { questionnaire } = content
-    const newQuestion = questionnaire[questions.length]
-    if (newQuestion) { addQuestion(newQuestion) }
+  const renderStart = () => {
+    if (content.answers.length < 1) {
+      return (
+        <Container maxWidth="lg" className="container">
+          <Start handler={answerDispatcher} title={content.title} />
+        </Container>
+      )
+    }
   }
 
-  const dismissStart = () => {
-    document.querySelector(".startBox")?.setAttribute("style", "display: none; opacity: 0")
+  const renderQuestions = () => {
+    return content.questionnaire.map((question, index) => {
+      if (index < content.answers.length)
+        return (
+          <Question key={index} inputComponentTag={question.inputComponentTag} title={question.title} />
+        )
+    })
   }
 
   return (
     <ThemeProvider theme={theme}>
       <div className="root">
-        <Container maxWidth="lg" className="container">
-          <Start handler={startQuestionnaire} title={title} />
-        </Container>
+        {renderStart()}
         <Container maxWidth="md" className="container">
-          {questions.map((question, index) => <Question key={index} handler={showNextQuestion} inputComponentTag={question.inputComponentTag} title={question.title} />)}
-          {resultCalculationButton}
-        </Container>
+          {renderQuestions()}
+        </Container >
       </div>
     </ThemeProvider>
   );

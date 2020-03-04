@@ -1,12 +1,19 @@
 import React from "react";
 import { Slider, Box } from '@material-ui/core';
+import { useDispatch } from "react-redux";
+import { addAnswer, updateAnswer } from "../../../../redux/reducer/actions";
 
 const Age = () => {
+    const dispatch = useDispatch();
 
     function valuetext(value: number) {
         return `${value}`;
     }
 
+    const handleChange = (event: any, newValue: number | number[]) => {
+        dispatch(updateAnswer({ inputComponentTag: "age", value: newValue as number }))
+    };
+    
     const marks = [
         {
             value: 0,
@@ -37,6 +44,7 @@ const Age = () => {
                 marks={marks}
                 min={0}
                 max={99}
+                onChange={handleChange}
             />
         </Box>
     )

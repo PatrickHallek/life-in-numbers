@@ -1,15 +1,16 @@
 import React from "react";
 import { Button, Typography, Box, Card, CardContent } from "@material-ui/core";
 import InputComponentMapping from "../shared/inputs/input";
+import { useDispatch } from "react-redux";
+import { IAnswer } from "../../models/contentInterface";
+import { addAnswer } from "../../redux/reducer/actions";
 
 type QuestionProps = {
   title: string,
-  handler: any,
   inputComponentTag: any
 }
 
-const Question = ({ title, handler, inputComponentTag }: QuestionProps) => {
-
+const Question = ({ title, inputComponentTag }: QuestionProps) => {
   const inputComponent = InputComponentMapping(inputComponentTag)
 
   return (
@@ -23,9 +24,6 @@ const Question = ({ title, handler, inputComponentTag }: QuestionProps) => {
             {title}
           </Typography>
           {inputComponent}
-          <Button onClick={handler} variant="contained" color="primary" className="button">
-            Submit
-          </Button>
         </CardContent>
       </Card>
     </Box>

@@ -1,11 +1,18 @@
 import React from "react";
 import { Slider, Box } from '@material-ui/core';
+import { updateAnswer } from "../../../../redux/reducer/actions";
+import { useDispatch } from "react-redux";
 
 const Height = () => {
+    const dispatch = useDispatch();
 
     function valuetext(value: number) {
         return `${value}`;
     }
+
+    const handleChange = (event: any, newValue: number | number[]) => {
+        dispatch(updateAnswer({ inputComponentTag: "height", value: newValue as number }))
+    };
 
     const marks = [
         {
@@ -33,6 +40,7 @@ const Height = () => {
                 marks={marks}
                 min={120}
                 max={250}
+                onChange={handleChange}
             />
         </Box>
     )
