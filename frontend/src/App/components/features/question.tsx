@@ -11,7 +11,7 @@ const Question = ({ title, inputComponentTag }: QuestionProps) => {
   const inputComponent = InputComponentMapping(inputComponentTag)
 
   return (
-    <Box mt={3}>
+    <Box mt={3} className="question">
       <Card className="appCard">
         <CardContent>
           <Typography variant="h3" component="h2">

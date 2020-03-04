@@ -10,6 +10,7 @@ html::-webkit-scrollbar {
 .root {
   position: relative;
   width: 100vw;
+  height: 100vh;
   overflow: hidden
 }
 
@@ -20,6 +21,38 @@ html::-webkit-scrollbar {
 
 .container {
   margin-top: 104px;
+}
+
+.questionContainer {
+  margin-top: 104px;
+  overflow-y: auto;
+  height: calc(100vh - 170px);
+  scroll-behavior: smooth;
+}
+
+.questionContainer::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 50%;
+  padding-top: 60px;
+}
+
+/* Track */
+.questionContainer::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+/* Handle */
+.questionContainer::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Handle on hover */
+.questionContainer::-webkit-scrollbar-thumb:hover {
+  background: #555;
+  cursor: pointer;
 }
 
 @keyframes titleSlide {

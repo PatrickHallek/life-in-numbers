@@ -35,15 +35,14 @@ const App = () => {
     }
   });
 
-  const answerDispatcher = ({ inputComponentTag, value }: IAnswer) => {
-    dispatch(updateAnswer({ inputComponentTag, value }));
-  }
+
+
 
   const renderStart = () => {
     if (content.answers.length < 1) {
       return (
         <Container maxWidth="lg" className="container">
-          <Start handler={answerDispatcher} title={content.title} />
+          <Start handler={() => dispatch(updateAnswer({ inputComponentTag: "initial", value: 0 }))} title={content.title} />
         </Container>
       )
     }
@@ -53,7 +52,7 @@ const App = () => {
     return content.questionnaire.map((question, index) => {
       if (index < content.answers.length) return (
         <Question key={index} inputComponentTag={question.inputComponentTag} title={question.title} />
-      ) 
+      )
       else return <div key={index}></div>
     })
   }
@@ -62,7 +61,7 @@ const App = () => {
     <ThemeProvider theme={theme}>
       <div className="root">
         {renderStart()}
-        <Container maxWidth="md" className="container">
+        <Container maxWidth="md" className="questionContainer">
           {renderQuestions()}
         </Container >
       </div>
