@@ -14,8 +14,12 @@ const Sex = () => {
     return (
         <div>
             <Box display="flex" justifyContent="center">
-                <Button onClick={() => handleChange(1)} className="sexButton" variant="contained" color="primary" >Male</Button>
-                <Button onClick={() => handleChange(2)} className="sexButton" variant="contained" color="primary" >Female</Button>
+                <Box width="150px" margin={2}>
+                    <Button fullWidth={true} onClick={() => handleChange(1)} className="sexButton" variant="contained" color="primary" >Male</Button>
+                </Box>
+                <Box width="150px" margin={2}>
+                    <Button fullWidth={true} onClick={() => handleChange(2)} className="sexButton" variant="contained" color="primary" >Female</Button>
+                </Box>
             </Box>
         </div>
     )
