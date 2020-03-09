@@ -5,17 +5,24 @@ import { createMuiTheme } from '@material-ui/core/styles';
 import Question from "./components/features/question";
 import Start from "./components/features/start";
 import { IContent, IAnswer } from "./models/contentInterface";
-import { updateAnswer } from "./redux/reducer/actions";
+import { updateAnswer, changeContent } from "./redux/reducer/actions";
 import { useSelector, useDispatch, shallowEqual } from "react-redux";
 
 import "./app.css"
+import { useParams } from "react-router";
+import getContent from "./services/contentService";
 
-const App = () => {
+export const TopicForwarder = () => {
+  const { topic } = useParams<{ topic: string }>()
+  const initialComponentContent = getContent(topic)
+
   const dispatch = useDispatch();
-  // const { topic } = useParams<{ topic: string }>()
-  // const initialComponentContent = getContent(topic)
-  // dispatch(changeContent(initialComponentContent))
+  dispatch(changeContent(initialComponentContent))
+  return <App />
+}
 
+export const App = () => {
+  const dispatch = useDispatch();
   const content: IContent = useSelector((state: any) => state.content, shallowEqual)
 
   const theme = createMuiTheme({
@@ -67,6 +74,4 @@ const App = () => {
       </div>
     </ThemeProvider>
   );
-};
-
-export default App;
+}
