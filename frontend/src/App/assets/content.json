@@ -24,8 +24,7 @@
             "title": "How tall are you?",
             "inputComponentTag": "height"
         }
-    ],
-    "answers": []
+    ]
 }, {
     "topic": "smoking",
     "title": "How much did you smoke in your entire life?",
@@ -52,6 +51,5 @@
             "title": "Wich sex do you have?",
             "inputComponentTag": "sex"
         }
-    ],
-    "answers": []
+    ]
 }]

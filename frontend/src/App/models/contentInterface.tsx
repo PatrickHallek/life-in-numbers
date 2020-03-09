@@ -9,7 +9,8 @@ export interface IContent {
     resultText: string,
     formula: Array<any>,
     questionnaire: Array<IContentQuestionnaire>,
-    answers: Array<IAnswer>
+    answers?: Array<IAnswer>,
+    result?: number|undefined
 }
 
 export interface IContentQuestionnaire {

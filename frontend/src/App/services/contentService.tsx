@@ -16,8 +16,7 @@ const initialState: IContent = {
             "title": "",
             "inputComponentTag": ""
         }
-    ],
-    "answers": []
+    ]
 }
 
 const getContent = (topic: string) => {

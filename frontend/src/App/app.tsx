@@ -46,7 +46,7 @@ export const App = () => {
   const content: IContent = useSelector((state: any) => state.content, shallowEqual)
 
   const renderStart = () => {
-    if (content.answers.length < 1) {
+    if (content.answers?.length === undefined) {
       return (
         <Container maxWidth="lg" className="container">
           <Start handler={() => dispatch(updateAnswer({ inputComponentTag: "initial", value: 0 }))} title={content.title} />
@@ -57,15 +57,15 @@ export const App = () => {
 
   const renderQuestions = () => {
     return content.questionnaire.map((question, index) => {
-      if (index < content.answers.length) return (
-        <Question key={index} inputComponentTag={question.inputComponentTag} title={question.title} />
-      )
-      else return <div key={index}></div>
+      if(content.answers) if (index < content.answers.length || content.result != undefined) return (
+          <Question key={index} inputComponentTag={question.inputComponentTag} title={question.title} />
+        ) 
+        else return <div key={index}></div>
     })
   }
 
   const renderResultButton = () => {
-    if (content.questionnaire.length === content.answers.length - 1) return (
+    if(content.answers) if (content.questionnaire.length === content.answers.length - 1) return (
       <Box display="flex" justifyContent="center">
         <Box margin={2} width="200px">
           <Button fullWidth={true} onClick={() => { console.log(1) }} variant="contained" color="primary" >Calculate Result</Button>
