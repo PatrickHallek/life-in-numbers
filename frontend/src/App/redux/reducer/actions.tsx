@@ -14,3 +14,10 @@ export const changeContent = (content: IContent) => {
         content: content
     }
 }
+
+export const addResult = (result: number) => {
+    return {
+        type: types.ADD_RESULT,
+        result: result
+    }
+}

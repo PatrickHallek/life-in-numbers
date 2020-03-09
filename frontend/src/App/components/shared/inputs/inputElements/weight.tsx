@@ -8,7 +8,6 @@ const Weight = () => {
     const dispatch = useDispatch();
 
     const handleChange = (event: any) => {
-        console.log(event)
         dispatch(updateAnswer({ inputComponentTag: "weight", value: event }))
     };
 

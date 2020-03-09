@@ -7,10 +7,10 @@ export interface IContent {
         background: string
     },
     resultText: string,
-    formula: Array<any>,
+    formula: { additions: Array<{ constant?: number, factor?: number, inputComponentTag?: string }>},
     questionnaire: Array<IContentQuestionnaire>,
     answers?: Array<IAnswer>,
-    result?: number|undefined
+    result?: number | undefined
 }
 
 export interface IContentQuestionnaire {

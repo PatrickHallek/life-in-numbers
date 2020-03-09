@@ -25,6 +25,9 @@ const contentReducer = (contentState: IContent = initialState, action: any): ICo
             }
             else return { ...contentState, answers: [{ ...action.answer }] } // Add initial answer
 
+            case types.ADD_RESULT:
+                return { ...contentState, result: action.result }
+
         default:
             return contentState
 
