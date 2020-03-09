@@ -17,12 +17,12 @@
             "inputComponentTag": "weight"
         },
         {
-            "title": "How tall are you?",
-            "inputComponentTag": "height"
-        },
-        {
             "title": "Wich sex do you have?",
             "inputComponentTag": "sex"
+        },
+        {
+            "title": "How tall are you?",
+            "inputComponentTag": "height"
         }
     ],
     "answers": []
@@ -30,9 +30,9 @@
     "topic": "smoking",
     "title": "How much did you smoke in your entire life?",
     "colorTheme": {
-        "primary": "#257C62",
-        "secondary": "#A5FFD4",
-        "background": "#CCFFE7"
+        "primary": "#59344F",
+        "secondary": "#CB7CE2",
+        "background": "#8C6688"
     },
     "resultText": "this is the result",
     "formula": [1, 2, 2],

@@ -1,4 +1,4 @@
-import JSONContent from './content.json'
+import JSONContent from '../assets/content.json'
 import { IContent } from '../models/contentInterface.jsx'
 
 const initialState: IContent = {
