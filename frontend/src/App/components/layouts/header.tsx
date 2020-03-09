@@ -3,7 +3,7 @@ import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
-import { Box } from "@material-ui/core";
+import { Box, Button } from "@material-ui/core";
 import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     link: {
       marginRight: "10px",
-      color: theme.palette.primary.main,
+      color: "primary",
       textDecoration: "none"
     }
   })
@@ -47,20 +47,17 @@ const Header = () => {
               LN
           </Typography>
           </Box>
-
           <Box flexGrow="1" ml={1}>
             <Typography
               color="primary"
               className={classes.logoText}
-              variant="h4"
-            >
+              variant="h4">
               Life In <br /> Numbers
           </Typography>
           </Box>
-
           <Box mr={5}>
-            <Link className={classes.link} to={`/calories`}>Calories</Link>
-            <Link className={classes.link} to={`/smoking`}>Smoking</Link>
+            <Button color="primary" className={classes.link} to={`/calories`} component={Link}>Calories</Button>
+            <Button color="primary" className={classes.link} to={`/smoking`} component={Link}>Smoking</Button>
           </Box>
         </Toolbar>
       </AppBar>
