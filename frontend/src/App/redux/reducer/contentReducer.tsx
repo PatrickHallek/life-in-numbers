@@ -14,11 +14,11 @@ const contentReducer = (contentState: IContent = initialState, action: any): ICo
             // Check if answer was answered before
             const isAnswer = contentState.answers?.find(answer => answer.inputComponentTag === action.answer.inputComponentTag)
             if (isAnswer === undefined) return { ...contentState, answers: [...contentState?.answers, { ...action.answer }] } // Add answer
-            else return { // Update answer
+            else return { 
                 ...contentState, answers: contentState.answers?.map(answer => {
                     if (answer.inputComponentTag === action.answer.inputComponentTag) return { ...answer, ...action.answer }
                     else return answer
-                })
+                }) // Update answer
             }
 
         default:
