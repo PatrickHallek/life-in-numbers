@@ -4,10 +4,13 @@ import { IContent } from '../models/contentInterface.jsx'
 const initialState: IContent = {
     "topic": "",
     "title": "",
-    "colorTheme": {
+    "theme": {
         "primary": "",
         "secondary": "",
-        "background": ""
+        "background": "",
+        "backgroundImage": "",
+        "topEllipse": "",
+        "bottomEllipse": ""
     },
     "resultText": "",
     "questionnaire": [

@@ -1,10 +1,14 @@
 export interface IContent {
     topic: string,
     title: string,
-    colorTheme: {
+    theme: {
         primary: string,
         secondary: string,
-        background: string
+        background: string,
+        backgroundImage:string,
+        topEllipse: string,
+        bottomEllipse: string,
+
     },
     resultText: string,
     questionnaire: Array<IContentQuestionnaire>,

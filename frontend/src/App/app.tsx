@@ -20,13 +20,13 @@ export const TopicForwarder = () => {
   const theme = createMuiTheme({
     palette: {
       primary: {
-        main: initialComponentContent.colorTheme.primary
+        main: initialComponentContent.theme.primary
       },
       secondary: {
-        main: initialComponentContent.colorTheme.secondary
+        main: initialComponentContent.theme.secondary
       },
       background: {
-        default: initialComponentContent.colorTheme.background
+        default: initialComponentContent.theme.background
       }
     }
   })
@@ -100,11 +100,26 @@ export const App = () => {
     else return renderStart()
   }
 
+  const renderBackgroundImages = () => {
+    const { theme } = content
+    try {
+      return (
+        <div>
+          <img src={require("./assets/img/" + theme.bottomEllipse)} alt="ellipse" className="backgroundEllipseBottom" />
+          <img src={require("./assets/img/" + theme.topEllipse)} alt="ellipse" className="backgroundEllipseTop" />
+          <img src={require("./assets/img/" + theme.backgroundImage)} alt="avocado" className="backgroundImage" />
+        </div>
+      )
+    } catch {}
+  }
+
   return (
     <div className="root">
       <Container maxWidth="lg" className="container">
         {renderContent()}
       </Container >
+      {renderBackgroundImages()}
     </div>
+
   );
 }

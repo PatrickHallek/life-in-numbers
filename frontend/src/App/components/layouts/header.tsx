@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme: Theme) =>
 const Header = () => {
   const classes = useStyles();
   const content: IContent = useSelector((state: any) => state.content, shallowEqual)
-  const { primary } = content.colorTheme
+  const { primary } = content.theme
 
   return (
     <div className={classes.root}>

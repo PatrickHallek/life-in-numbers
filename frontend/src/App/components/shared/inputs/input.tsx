@@ -15,6 +15,6 @@ const InputComponentMapping = (componentTag: string) => {
     return Object(InputComponentLibrary)[componentTag]
 }
 
-const InputComponentLibrary: IInputComponentLibrary = { sex: <Sex />, age: <Age />, height: <Height />, weight:<Weight /> }
+const InputComponentLibrary: IInputComponentLibrary = { sex: <Sex />, age: <Age />, height: <Height />, weight: <Weight /> }
 
 export default InputComponentMapping

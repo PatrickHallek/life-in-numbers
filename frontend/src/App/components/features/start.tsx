@@ -23,21 +23,6 @@ const Start = ({ handler, title }: StartProps) => {
                     </Button>
                 </Box>
             </Box>
-            {/* <img
-                src={require("../../assets/img/ellipse.png")}
-                alt="ellipse"
-                className="backgroundEllipseBottom"
-            />
-            <img
-                src={require("../../assets/img/ellipse.png")}
-                alt="ellipse"
-                className="backgroundEllipseTop"
-            />
-            <img
-                src={require("../../assets/img/avocado.png")}
-                alt="avocado"
-                className="backgroundImage"
-            /> */}
         </Container>
     );
 
