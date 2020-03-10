@@ -107,7 +107,7 @@ body {
   right: -80px;
   z-index: -1;
   transform: rotate(25deg);
-  animation: imageSlide 0.6s ease-in
+  animation: imageSlide 0.6s ease-in-out
 }
 
 @keyframes imageSlide {
