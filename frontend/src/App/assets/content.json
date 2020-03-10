@@ -1,13 +1,12 @@
 [{
     "topic": "calories",
-    "title": "Test Title, Please Edit This Page",
+    "title": "How many calories have you burned in your life?",
     "colorTheme": {
         "primary": "#257C62",
         "secondary": "#A5FFD4",
         "background": "#CCFFE7"
     },
-    "resultText": "You consumed that many calories in your entire life:",
-    "formula": {"additions": [{"factor": 1000.5, "inputComponentTag": "sex"}, {"constant": 2000}]},
+    "resultText": "You burned that many calories in your entire life:",
     "questionnaire": [{
             "title": "How old are you?",
             "inputComponentTag": "age"
@@ -34,7 +33,6 @@
         "background": "#8C6688"
     },
     "resultText": "this is the result",
-    "formula": {"additions": [{"factor": 0.5, "inputComponentTag": "sex"}, {"constant": 2000}]},
     "questionnaire": [{
             "title": "How old are you?",
             "inputComponentTag": "age"

@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 const Sex = () => {
 
     const dispatch = useDispatch();
-    const handleChange = (value: number) => {
+    const handleChange = (value: string) => {
         dispatch(updateAnswer({ inputComponentTag: "sex", value: value }))
     };
 
@@ -15,10 +15,10 @@ const Sex = () => {
         <div>
             <Box display="flex" justifyContent="center">
                 <Box width="150px" margin={2}>
-                    <Button fullWidth={true} onClick={() => handleChange(1)} className="sexButton" variant="contained" color="primary" >Male</Button>
+                    <Button fullWidth={true} onClick={() => handleChange("male")} className="sexButton" variant="contained" color="primary" >Male</Button>
                 </Box>
                 <Box width="150px" margin={2}>
-                    <Button fullWidth={true} onClick={() => handleChange(2)} className="sexButton" variant="contained" color="primary" >Female</Button>
+                    <Button fullWidth={true} onClick={() => handleChange("female")} className="sexButton" variant="contained" color="primary" >Female</Button>
                 </Box>
             </Box>
         </div>

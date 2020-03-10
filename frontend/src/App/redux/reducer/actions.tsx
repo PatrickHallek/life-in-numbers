@@ -15,7 +15,7 @@ export const changeContent = (content: IContent) => {
     }
 }
 
-export const addResult = (result: number) => {
+export const addResult = (result: { value: number, averAgevalue?: number }) => {
     return {
         type: types.ADD_RESULT,
         result: result

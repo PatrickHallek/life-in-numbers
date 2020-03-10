@@ -6,6 +6,7 @@ import { IContent } from "./models/contentInterface";
 import { updateAnswer, changeContent, addResult } from "./redux/reducer/actions";
 import { useSelector, useDispatch, shallowEqual } from "react-redux";
 import { useParams } from "react-router";
+import getCaloriesResult from "./services/caloriesResultService"
 import getContent from "./services/contentService";
 import Question from "./components/features/question";
 import Start from "./components/features/start";
@@ -49,23 +50,21 @@ export const App = () => {
   const renderStart = () => {
     if (content.answers?.length === undefined) {
       return (
-        <Container maxWidth="lg" className="container">
-          <Start handler={() => dispatch(updateAnswer({ inputComponentTag: "initial", value: 0 }))} title={content.title} />
-        </Container>
+        <Start handler={() => dispatch(updateAnswer({ inputComponentTag: "initial", value: 0 }))} title={content.title} />
       )
     }
   }
 
   const renderQuestions = () => {
-    return content.questionnaire.map((question, index) => {
+    const questions = content.questionnaire.map((question, index) => {
       if (content.answers) {
         if (index < content.answers.length)
           return <Question key={index} inputComponentTag={question.inputComponentTag} title={question.title} />
         else return <div key={index}></div>
       }
       else return <Question key={index} inputComponentTag={question.inputComponentTag} title={question.title} />
-
     })
+    return [<Container key="container" maxWidth="md" className="questionContainer">{questions}</Container >]
   }
 
   const renderResultButton = () => {
@@ -78,19 +77,14 @@ export const App = () => {
     )
   }
 
-  const calculateResult = () => {
-    const { additions } = content.formula
-    let result: number = 0;
-
-    additions.forEach(addition => {
-      if (addition.constant) result += addition.constant
-      else if (addition.factor && addition.inputComponentTag) {
-        const componentAnswer = content.answers?.find(answer => addition.inputComponentTag === answer.inputComponentTag)?.value
-        if (componentAnswer) result += addition.factor * componentAnswer
-      }
-    })
-    
-    return result
+  const calculateResult = (): { value: number, averageValue?: number } => {
+    switch (content.topic) {
+      case "calories":
+        if (content.answers) return getCaloriesResult(content.answers)
+        else return { value: 0 }
+      default:
+        return { value: 0 }
+    }
   }
 
   const renderResult = () => {
@@ -103,13 +97,12 @@ export const App = () => {
       else if (content.questionnaire.length === content.answers.length - 1)
         return [...renderQuestions(), renderResultButton()]
       else return renderQuestions()
-    else return <div></div>
+    else return renderStart()
   }
 
   return (
     <div className="root">
-      {renderStart()}
-      <Container maxWidth="md" className="questionContainer">
+      <Container maxWidth="lg" className="container">
         {renderContent()}
       </Container >
     </div>

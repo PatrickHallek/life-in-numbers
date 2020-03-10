@@ -10,7 +10,6 @@ const initialState: IContent = {
         "background": ""
     },
     "resultText": "",
-    "formula": { "additions": [] },
     "questionnaire": [
         {
             "title": "",

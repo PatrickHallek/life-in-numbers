@@ -5,6 +5,8 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import { Box, Button } from "@material-ui/core";
 import { Link } from "react-router-dom";
+import { IContent } from "../../models/contentInterface";
+import { useSelector, shallowEqual } from "react-redux";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -26,38 +28,37 @@ const useStyles = makeStyles((theme: Theme) =>
     logoText: {
       fontSize: "16px"
     },
-    link: {
-      marginRight: "10px",
-      color: "primary",
-      textDecoration: "none"
-    }
   })
 );
 
 const Header = () => {
   const classes = useStyles();
+  const content: IContent = useSelector((state: any) => state.content, shallowEqual)
+  const { primary } = content.colorTheme
 
   return (
-
     <div className={classes.root}>
       <AppBar className={classes.bar}>
         <Toolbar>
-          <Box ml={5}>
-            <Typography color="primary" className={classes.logo} variant="h4">
+          <Box ml={5} color={primary}>
+            <Typography className={classes.logo} variant="h4">
               LN
           </Typography>
           </Box>
-          <Box flexGrow="1" ml={1}>
+          <Box flexGrow="1" ml={1} color={primary}>
             <Typography
-              color="primary"
               className={classes.logoText}
               variant="h4">
               Life In <br /> Numbers
           </Typography>
           </Box>
           <Box mr={5}>
-            <Button color="primary" className={classes.link} to={`/calories`} component={Link}>Calories</Button>
-            <Button color="primary" className={classes.link} to={`/smoking`} component={Link}>Smoking</Button>
+            <Button to={`/calories`} component={Link}>
+              <Box color={primary}>Calories</Box>
+            </Button>
+            <Button to={`/smoking`} component={Link}>
+              <Box color={primary}>Smoking</Box>
+            </Button>
           </Box>
         </Toolbar>
       </AppBar>
