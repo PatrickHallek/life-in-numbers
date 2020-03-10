@@ -7,6 +7,10 @@ html::-webkit-scrollbar {
   width: 0px;
 }
 
+body {
+  transition: all 0.3s ease;
+}
+
 .root {
   position: relative;
   width: 100vw;
@@ -16,7 +20,8 @@ html::-webkit-scrollbar {
 
 .title {
   width: 90%;
-  animation: titleSlide 0.6s ease-in
+  animation: titleSlide 0.6s ease-in;
+  transition: all 0.3s ease;
 }
 
 .container {
