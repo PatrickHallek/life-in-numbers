@@ -1,4 +1,4 @@
-# Create React App example with TypeScript
+# Life in numbers - How much did you consumed in your entire life?
 
 Demo: [https://lifeinnumbers.de/](https://lifeinnumbers.de/)
 
