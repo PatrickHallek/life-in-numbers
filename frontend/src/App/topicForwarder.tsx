@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { CssBaseline } from "@material-ui/core";
 import { ThemeProvider } from "@material-ui/core/styles";
 import { createMuiTheme } from '@material-ui/core/styles';
-import { changeContent } from "./redux/actions";
+import { changeContent, clearResult, clearAnswers } from "./redux/actions";
 import { useDispatch } from "react-redux";
 import { useParams } from "react-router";
 import { App } from "./app"
@@ -29,6 +29,8 @@ export const TopicForwarder = () => {
 
     useEffect(() => {
         dispatch(changeContent(initialComponentContent))
+        dispatch(clearResult())
+        dispatch(clearAnswers())
     })
 
     return (

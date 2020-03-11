@@ -2,6 +2,12 @@ import types from './types';
 import { IAnswer, IContent, IResult } from '../models/contentInterface';
 
 
+export const clearAnswers = () => {
+    return {
+        type: types.CLEAR_ANSWERS,
+    }
+}
+
 export const addAnswer = (answer: IAnswer) => {
     return {
         type: types.ADD_ANSWER,
@@ -27,5 +33,11 @@ export const addResult = (result: IResult) => {
     return {
         type: types.UPDATE_RESULT,
         payload: result
+    }
+}
+
+export const clearResult = () => {
+    return {
+        type: types.CLEAR_RESULT
     }
 }
