@@ -10,7 +10,8 @@ import getContent from "./services/contentService";
 import "./app.css"
 
 export const TopicForwarder = () => {
-    const { topic } = useParams<{ topic: string }>()
+    let { topic } = useParams<{ topic: string }>()
+    if (!topic) topic = "calories"
     const initialComponentContent = getContent(topic)
     const dispatch = useDispatch()
     const theme = createMuiTheme({

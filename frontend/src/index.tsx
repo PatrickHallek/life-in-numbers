@@ -13,6 +13,7 @@ ReactDOM.render(
     <Router>
       <Header />
       <Switch>
+        <Route exact path="/" component={TopicForwarder} />
         <Route exact path="/:topic" component={TopicForwarder} />
         <Route exact path="/coming-soon/:topic" component={ComingSoon} />
       </Switch>
