@@ -1,6 +1,6 @@
 [{
     "topic": "calories",
-    "title": "How many calories have you burned in your life?",
+    "title": "How many calories have you burned in your entire life?",
     "theme": {
         "primary": "#257C62",
         "secondary": "#A5FFD4",
@@ -29,7 +29,7 @@
     ]
 }, {
     "topic": "smoking",
-    "title": "  How much cigarettes did you smoke in your entire life?",
+    "title": "How much cigarettes did you smoke in your entire life?",
     "theme": {
         "primary": "#59344F",
         "secondary": "#CB7CE2",
