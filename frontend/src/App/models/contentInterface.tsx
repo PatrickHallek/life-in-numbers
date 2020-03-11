@@ -5,15 +5,13 @@ export interface IContent {
         primary: string,
         secondary: string,
         background: string,
-        backgroundImage:string,
+        backgroundImage: string,
         topEllipse: string,
         bottomEllipse: string,
 
     },
     resultText: string,
     questionnaire: Array<IContentQuestionnaire>,
-    answers?: Array<IAnswer>,
-    result?: { value: number | undefined, averageValue?: number }
 }
 
 export interface IContentQuestionnaire {
@@ -22,6 +20,11 @@ export interface IContentQuestionnaire {
 }
 
 export interface IAnswer {
-    inputComponentTag: string,
-    value: number | string
+    inputComponentTag?: string,
+    value?: number | string
+}
+
+export interface IResult {
+    value?: number,
+    averageValue?: number
 }

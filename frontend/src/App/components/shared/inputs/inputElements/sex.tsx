@@ -1,15 +1,16 @@
 import React from "react";
 import { Button, Box } from '@material-ui/core';
-import { updateAnswer } from "../../../../redux/reducer/actions";
 import { useDispatch } from "react-redux";
+import { addAnswer } from "../../../../redux/actions";
+
 
 const Sex = () => {
-
     const dispatch = useDispatch();
-    const handleChange = (value: string) => {
-        dispatch(updateAnswer({ inputComponentTag: "sex", value: value }))
-    };
+    const inputComponentTag = "sex";
 
+    const handleChange = (value: string) => {
+        dispatch(addAnswer({ inputComponentTag, value: value }))
+    };
 
     return (
         <div>

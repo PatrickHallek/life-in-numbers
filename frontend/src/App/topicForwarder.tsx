@@ -1,0 +1,40 @@
+import React, { useEffect } from "react";
+import { CssBaseline } from "@material-ui/core";
+import { ThemeProvider } from "@material-ui/core/styles";
+import { createMuiTheme } from '@material-ui/core/styles';
+import { changeContent } from "./redux/actions";
+import { useDispatch } from "react-redux";
+import { useParams } from "react-router";
+import { App } from "./app"
+import getContent from "./services/contentService";
+import "./app.css"
+
+export const TopicForwarder = () => {
+    const { topic } = useParams<{ topic: string }>()
+    const initialComponentContent = getContent(topic)
+    const dispatch = useDispatch()
+    const theme = createMuiTheme({
+        palette: {
+            primary: {
+                main: initialComponentContent.theme.primary
+            },
+            secondary: {
+                main: initialComponentContent.theme.secondary
+            },
+            background: {
+                default: initialComponentContent.theme.background
+            }
+        }
+    })
+
+    useEffect(() => {
+        dispatch(changeContent(initialComponentContent))
+    })
+
+    return (
+        <ThemeProvider theme={theme}>
+            <CssBaseline />
+            <App />
+        </ThemeProvider>
+    )
+}
