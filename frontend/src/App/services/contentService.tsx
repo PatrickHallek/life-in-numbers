@@ -2,22 +2,33 @@ import JSONContent from '../assets/content.json'
 import { IContent } from '../models/contentInterface.jsx'
 
 const initialState: IContent = {
-    "topic": "",
-    "title": "",
+    "topic": "calories",
+    "title": "How many calories have you burned in your entire life?",
     "theme": {
-        "primary": "",
-        "secondary": "",
-        "background": "",
-        "backgroundImage": "",
-        "topEllipse": "",
-        "bottomEllipse": ""
+        "primary": "#257C62",
+        "secondary": "#A5FFD4",
+        "background": "#CCFFE7",
+        "backgroundImage": "avocado.png",
+        "topEllipse": "ellipse.png",
+        "bottomEllipse": "ellipse.png"
     },
-    "resultText": "",
-    "questionnaire": [
-        {
-            "title": "",
-            "inputComponentTag": ""
-        }
+    "resultText": "You burned that many calories in your entire life:",
+    "questionnaire": [{
+        "title": "How old are you?",
+        "inputComponentTag": "age"
+    },
+    {
+        "title": "How much do you weigt?",
+        "inputComponentTag": "weight"
+    },
+    {
+        "title": "Wich sex do you have?",
+        "inputComponentTag": "sex"
+    },
+    {
+        "title": "How tall are you?",
+        "inputComponentTag": "height"
+    }
     ]
 }
 
