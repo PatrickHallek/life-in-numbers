@@ -56,7 +56,7 @@ const Header = () => {
             <Button to={`/calories`} component={Link}>
               <Box color={primary}>Calories</Box>
             </Button>
-            <Button to={`/smoking`} component={Link}>
+            <Button to={`/coming-soon/smoking`} component={Link}>
               <Box color={primary}>Smoking</Box>
             </Button>
           </Box>

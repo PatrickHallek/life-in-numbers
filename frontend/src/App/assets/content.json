@@ -5,9 +5,9 @@
         "primary": "#257C62",
         "secondary": "#A5FFD4",
         "background": "#CCFFE7",
-        "backgroundImage" : "avocado.png",
-        "topEllipse" : "ellipse.png",
-        "bottomEllipse" : "ellipse.png"
+        "backgroundImage": "avocado.png",
+        "topEllipse": "ellipse.png",
+        "bottomEllipse": "ellipse.png"
     },
     "resultText": "You burned that many calories in your entire life:",
     "questionnaire": [{
@@ -29,14 +29,14 @@
     ]
 }, {
     "topic": "smoking",
-    "title": "How much did you smoke in your entire life?",
+    "title": "  How much cigarettes did you smoke in your entire life?",
     "theme": {
         "primary": "#59344F",
         "secondary": "#CB7CE2",
         "background": "#8C6688",
-        "backgroundImage" : "",
-        "topEllipse" : "",
-        "bottomEllipse" : ""
+        "backgroundImage": "",
+        "topEllipse": "",
+        "bottomEllipse": ""
     },
     "resultText": "this is the result",
     "questionnaire": [{
