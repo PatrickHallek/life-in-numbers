@@ -12,7 +12,7 @@ const Start = ({ handler, title }: StartProps) => {
     return (
         <Container maxWidth="lg">
             <Box className="startBox">
-                <Typography color="primary" variant="h1">
+                <Typography color="primary">
                     <Box fontWeight="fontWeightBold" className="title">
                         {title}
                     </Box>

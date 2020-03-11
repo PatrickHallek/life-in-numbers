@@ -36,9 +36,9 @@ export const ComingSoon = () => {
         <ThemeProvider theme={theme}>
             <CssBaseline />
             <div className="root">
-                <Container maxWidth="lg">
+                <Container maxWidth="lg" className="container">
                     <Box className="startBox">
-                        <Typography color="primary" variant="h1">
+                        <Typography color="primary">
                             <Box fontWeight="fontWeightBold" className="title">
                                 {content.title}
                             </Box>
@@ -46,7 +46,7 @@ export const ComingSoon = () => {
                         <Box mt={6} mb={18} className="buttonBox">
                             <Button variant="contained" color="primary" className="button" disabled>
                                 Coming soon
-                    </Button>
+                            </Button>
                         </Box>
                     </Box>
                 </Container>

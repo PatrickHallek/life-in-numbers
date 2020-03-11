@@ -14,14 +14,25 @@ body {
 .root {
   position: relative;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   overflow: hidden
 }
 
 .title {
+  font-size: 96px;
   width: 90%;
   animation: titleSlide 0.6s ease-in;
   transition: all 0.3s ease;
+}
+
+@media (max-width: 750px) {
+  .title {
+    font-size: 13vw;
+  }
+
+  .container {
+    margin-top: 144px;
+  }
 }
 
 .container {
