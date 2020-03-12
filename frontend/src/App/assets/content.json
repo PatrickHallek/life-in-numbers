@@ -25,6 +25,18 @@
         {
             "title": "How tall are you?",
             "inputComponentTag": "height"
+        },
+        {
+            "title": "How active are you in your job?",
+            "inputComponentTag": "job"
+        },
+        {
+            "title": "How often do you exercise per week?",
+            "inputComponentTag": "activityLevel"
+        },
+        {
+            "title": "Were you into sports as a teenager?",
+            "inputComponentTag": "teenageActivityLevel"
         }
     ]
 }, {
