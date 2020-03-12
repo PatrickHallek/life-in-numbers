@@ -10,7 +10,7 @@ export interface IContent {
         bottomEllipse: string,
 
     },
-    resultText: string,
+    resultText: Array<string>,
     questionnaire: Array<IContentQuestionnaire>,
 }
 

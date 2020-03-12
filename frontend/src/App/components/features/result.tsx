@@ -17,8 +17,9 @@ const Result = () => {
 
     if (Number(value) !== 0) return (
         <Box className="startBox" flexWrap="wrap">
-            <Box className="result text" fontWeight="bold" color={content.theme.primary}>{content.resultText}</Box>
-            <Box className="result" mt={1} fontWeight="bold" color={content.theme.primary}>{value}</Box>
+            <Box className="result text" fontWeight="bold" color={content.theme.primary}>
+                {content.resultText.map(textFragment => textFragment === "result" ? result.value : textFragment).join(" ")}
+            </Box>
             {renderAverageValue()}
         </Box>
     )

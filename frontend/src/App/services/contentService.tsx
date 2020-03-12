@@ -12,7 +12,7 @@ const initialState: IContent = {
         "topEllipse": "ellipse.png",
         "bottomEllipse": "ellipse.png"
     },
-    "resultText": "You burned that many calories in your entire life:",
+    "resultText": ["You burned", "result", "calories in your entire life!"],
     "questionnaire": [{
         "title": "How old are you?",
         "inputComponentTag": "age"
