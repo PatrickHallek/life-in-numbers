@@ -19,6 +19,7 @@ body {
 }
 
 .title {
+  margin-top: 84px;
   font-size: 96px;
   width: 90%;
   animation: titleSlide 0.6s ease-in;
@@ -26,9 +27,11 @@ body {
 }
 
 .result {
+  margin-top: 84px;
   font-size: 96px;
   width: 100%;
 }
+
 
 @media (max-width: 750px) {
 
@@ -36,15 +39,24 @@ body {
   .result {
     font-size: 13vw;
   }
+}
 
-  .container {
-    margin-top: 144px;
+.startBox {
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  transition: all 0.6s ease;
+}
+
+
+@media (max-height: 800px) {
+  .startBox {
+    align-content: flex-start;
   }
 }
 
-.container {
-  margin-top: 104px;
-}
+
 
 .questionContainer {
   margin-top: 104px;
@@ -87,15 +99,6 @@ body {
     margin-left: 0px
   }
 }
-
-.startBox {
-  height: 100vh;
-  display: flex;
-  flex-wrap: wrap;
-  align-content: center;
-  transition: all 0.6s ease;
-}
-
 
 .buttonBox {
   width: 100%;

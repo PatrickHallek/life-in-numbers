@@ -16,9 +16,9 @@ const Result = () => {
     }
 
     if (Number(value) !== 0) return (
-        <Box display="flex" justifyContent="center" flexWrap="wrap">
-            <Box className="result" fontWeight="bold" color={content.theme.primary}>{content.resultText}</Box>
-            <Box className="result" fontWeight="bold" color={content.theme.primary}>{value}</Box>
+        <Box className="startBox" flexWrap="wrap">
+            <Box className="result text" fontWeight="bold" color={content.theme.primary}>{content.resultText}</Box>
+            <Box className="result" mt={1} fontWeight="bold" color={content.theme.primary}>{value}</Box>
             {renderAverageValue()}
         </Box>
     )
