@@ -13,7 +13,7 @@ const Weight = () => {
 
     return (
         <Box m={2}>
-            <TextField onChange={event => handleChange(event?.target.value)} id="standard-basic" label="kg" />
+            <TextField type="number" onChange={event => handleChange(event?.target.value)} id="standard-basic" label="kg" />
         </Box>
     )
 }
