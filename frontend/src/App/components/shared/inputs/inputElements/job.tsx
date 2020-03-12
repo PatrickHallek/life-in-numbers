@@ -14,13 +14,13 @@ const Job = () => {
     return (
         <Box display="flex" justifyContent="center">
             <Box width="150px" margin={2}>
-                <Button fullWidth={true} onClick={() => handleChange(1)} className="sexButton" variant="contained" color="primary" >Very Active</Button>
+                <Button fullWidth={true} onClick={() => handleChange(1)} className="sexButton" variant="contained" color="primary">Less Active</Button>
             </Box>
             <Box width="150px" margin={2}>
-                <Button fullWidth={true} onClick={() => handleChange(2)} className="sexButton" variant="contained" color="primary" >Medium</Button>
+                <Button fullWidth={true} onClick={() => handleChange(2)} className="sexButton" variant="contained" color="primary">Medium</Button>
             </Box>
             <Box width="150px" margin={2}>
-                <Button fullWidth={true} onClick={() => handleChange(3)} className="sexButton" variant="contained" color="primary" >Less Active</Button>
+                <Button fullWidth={true} onClick={() => handleChange(3)} className="sexButton" variant="contained" color="primary">Very Active</Button>
             </Box>
         </Box>
     )
